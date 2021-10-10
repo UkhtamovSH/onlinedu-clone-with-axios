@@ -1,0 +1,59 @@
+.practiceCarousel {
+  background-color: var(--gainsboro);
+  padding: 60px 15px;
+}
+
+.practiceCarousel__titleMain {
+  display: flex;
+  justify-content: center;
+}
+
+.practiceCarousel__title {
+  width: 60%;
+}
+
+.practiceCarousel__title span {
+  color: var(--aquamarine);
+}
+
+.practice__carousel {
+  margin-top: 40px;
+}
+
+.practice__carouselImg {
+  height: 90px;
+  display: inline;
+  width: auto;
+  margin: auto;
+  border-radius: 8px;
+  background: #ffffff;
+  border: none;
+}
+
+@media (min-width: 1500px) {}
+
+@media (max-width: 1500px) and (min-width: 1200px) {}
+
+@media (max-width: 1200px) and (min-width: 992px) {
+  .practiceCarousel__title {
+    width: 80%;
+  }
+}
+
+@media (max-width: 992px) and (min-width: 765px) {
+  .practiceCarousel__title {
+    width: 80%;
+  }
+}
+
+@media (max-width: 765px) and (min-width: 576px) {
+  .practiceCarousel__title {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 576px) and (min-width: 320px) {
+  .practiceCarousel__title {
+    width: 100%;
+  }
+}

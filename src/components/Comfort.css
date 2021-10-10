@@ -1,0 +1,21 @@
+.comfort {
+  padding: 60px 15px;
+}
+
+.comfort__img {
+  width: 50px;
+  height: 50px;
+}
+
+.comfort__cardTitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0D2E69;
+  margin-bottom: 15px;
+}
+
+.comfort__card img {
+  width: 26px;
+  height: 25.6px;
+  margin-bottom: 15px;
+}

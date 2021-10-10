@@ -1,0 +1,58 @@
+.ourTeachers {
+  padding: 60px 0;
+}
+
+.ourTeachers__carouselCard {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.ourTeachers__img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.ourTeachers__divImg {
+  height: 140px;
+}
+
+.slick-next:not(.disabled):before,
+.slick-prev:not(.disabled):before {
+  opacity: 1;
+}
+
+.ourTeachers__carouselName {
+  font-size: 20;
+  font-weight: 700;
+  color: var(--blue);
+  margin-bottom: 3px;
+  text-align: center;
+}
+
+.ourTeachers__carousePosition {
+  font-size: 18;
+  color: var(--blue);
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.appBtnMain {
+  text-align: center;
+  margin-top: 30px;
+}
+
+@media (min-width: 1500px) {}
+
+@media (max-width: 1500px) and (min-width: 1200px) {}
+
+@media (max-width: 1200px) and (min-width: 992px) {}
+
+@media (max-width: 992px) and (min-width: 765px) {}
+
+@media (max-width: 765px) and (min-width: 576px) {}
+
+@media only screen and (max-width: 576px) and (min-width: 320px) {}

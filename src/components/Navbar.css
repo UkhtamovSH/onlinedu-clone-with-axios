@@ -1,0 +1,257 @@
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.menuMain {
+  position: relative;
+}
+
+.menuMainSub {
+  position: absolute;
+  left: 25px;
+}
+
+.menuMainSub ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: #FFF;
+  box-shadow: 0 10px 40px rgb(13 46 105 / 5%);
+  margin-bottom: 30px;
+  border-radius: 15px;
+}
+
+.menuMainSub ul li {
+  list-style-type: none !important;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  padding: 12px 16px;
+  clear: both;
+  font-weight: 400;
+  text-align: inherit;
+  white-space: nowrap;
+  background-color: transparent;
+  border: 0;
+}
+
+.menuMainSub ul li:hover {
+  background-color: var(--anotherGrey);
+}
+
+.menuMainSub ul li a {
+  color: var(--blue);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.menuMainSub ul li a:hover {
+  color: var(--dark);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.menuMainBtn {
+  cursor: pointer;
+  font-size: 16px;
+  padding: 8px 17px;
+  color: #26CAAC;
+  background-color: transparent;
+  border: 1px solid #26CAAC;
+  transition: 0.2s ease-in;
+  font-weight: bold;
+  border-radius: 8px;
+  margin-left: 25px;
+}
+
+.menuMainBtn:hover {
+  color: #FFFFFF;
+  background-color: #26CAAC;
+  border-color: #26CAAC;
+}
+
+.icon-menu {
+  transition: 0.2s ease-in;
+  transform: translate(-5px, -1px);
+}
+
+.icon-userLine {
+  transition: 0.2s ease-in;
+  transform: translate(-5px, -1px);
+}
+
+.menuMainBtn:hover .icon-menu {
+  background-color: #FFF;
+}
+
+.navbar {
+  border-bottom: 1px solid #e7e8ed;
+  padding: 15px 0;
+  background-color: #FFF;
+}
+
+
+.navbar__flexRightSub1Main {
+  display: flex;
+  width: 100%;
+}
+
+
+.navbar__flexRightSub3 input {
+  width: 320px;
+  height: calc(1.5em + 1.1882rem);
+  padding: 0.5941rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #0D2E69;
+  background-color: #f6f6f8;
+  background-clip: padding-box;
+  border: 0 solid #CED3D9;
+  border-radius: 8px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.appBtn3 {
+  height: calc(1.4em + 1.1882rem);
+  padding: 0.5941rem 1rem;
+  border-radius: 8px;
+  line-height: 1.5;
+  transform: translate(-20px, 0);
+  background: #ccc;
+  border: none;
+}
+
+.navbar__flexRightSub3 {
+  margin: 0 0 0 auto;
+}
+
+.navbar__flexRightSub4 {
+  margin: 0 0 0 auto;
+}
+
+.navbar__flexRightSub5 {
+  margin: 0 0 0 auto;
+}
+
+
+.navbar__flexRightSub4Sub>div {
+  margin-right: 55px;
+}
+
+.navbar__flexRightSub5 {
+  margin: 0 0 0 auto;
+}
+
+.appBtn22 {
+  display: none;
+}
+
+.appBtnMenu {
+  display: none;
+}
+
+.appBtn22 .icon-menu {
+  background-color: #FFF;
+  width: 20px;
+  height: 20px;
+  transform: translate(0, 0);
+}
+
+@media (min-width: 1500px) {}
+
+@media (max-width: 1500px) and (min-width: 1200px) {}
+
+@media (max-width: 1200px) and (min-width: 992px) {
+  .navbar__flexRightSub3 input {
+    width: 220px;
+  }
+}
+
+@media (max-width: 992px) and (min-width: 765px) {
+  .navbar__flexRightSub2 {
+    display: none;
+  }
+
+  .navbar__flexRightSub3 {
+    display: none;
+  }
+
+  .navbar__flexRightSub4 {
+    display: none;
+  }
+
+  .appBtnMenu {
+    display: block;
+  }
+
+  .appBtn22 {
+    display: block;
+  }
+
+  .navbar__flexRightSub5 .appBtn222 {
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 765px) and (min-width: 576px) {
+  .navbar__flexRightSub2 {
+    display: none;
+  }
+
+  .navbar__flexRightSub3 {
+    display: none;
+  }
+
+  .navbar__flexRightSub4 {
+    display: none;
+  }
+
+  .appBtnMenu {
+    display: block;
+  }
+
+  .appBtn22 {
+    display: block;
+  }
+
+  .navbar__flexRightSub5 .appBtn222 {
+    margin-right: 20px;
+  }
+}
+
+@media only screen and (max-width: 576px) and (min-width: 320px) {
+
+  .navbar__flexRightSub2 {
+    display: none;
+  }
+
+  .navbar__flexRightSub3 {
+    display: none;
+  }
+
+  .navbar__flexRightSub4 {
+    display: none;
+  }
+
+  .appBtnMenu {
+    display: block;
+  }
+
+  .appBtn22 {
+    display: block;
+  }
+
+  .navbar__flexRightSub5 .appBtn222 {
+    margin-right: 20px;
+  }
+
+  .navbar__flexRightSub1 .footer__logo {
+    max-width: 130px;
+    height: 46px;
+  }
+}

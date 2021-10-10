@@ -1,0 +1,94 @@
+.certificate {
+  padding: 60px 15px;
+}
+
+.certificateSub {
+  background-color: var(--gainsboro);
+  padding: 90px 30px;
+  border-radius: 25px;
+}
+
+.check-certificate__form input[type="text"] {
+  width: 400px;
+  height: 50px;
+  padding: 0 24px;
+  font-size: 18px;
+  background-color: #FFF;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  transform: translate(5px, 0);
+}
+
+.check-certificateflex {
+  display: flex;
+}
+
+.check-certificate__form {
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.check-certificate__form .form-control:focus {
+  color: #0D2E69;
+  background-color: #f6f6f8;
+  border-color: #87e8d7;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgb(38 202 172 / 25%);
+}
+
+.appBtnForm {
+  position: relative;
+  z-index: 2;
+}
+
+@media (min-width: 1500px) {}
+
+@media (max-width: 1500px) and (min-width: 1200px) {}
+
+@media (max-width: 1200px) and (min-width: 992px) {}
+
+@media (max-width: 992px) and (min-width: 765px) {
+  .check-certificate__form input[type="text"] {
+    width: 300px;
+  }
+}
+
+@media (max-width: 765px) and (min-width: 576px) {
+  .check-certificate__form input[type="text"] {
+    width: 200px;
+  }
+}
+
+@media only screen and (max-width: 576px) and (min-width: 320px) {
+  .check-certificate__form input[type="text"] {
+    width: 100%;
+    font-weight: normal !important;
+  }
+
+  .appSubTitleCertificate {
+    width: 100% !important;
+    font-size: 16px !important;
+  }
+
+  .check-certificateflex {
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .certificateSub {
+    padding: 80px 15px;
+  }
+
+  .appBtnForm {
+    margin-top: 15px;
+  }
+
+  .check-certificate__form {
+    padding: 15px;
+  }
+}

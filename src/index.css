@@ -1,0 +1,203 @@
+@font-face {
+  font-family: "Cera PRO";
+  src: url("assets/fonts/CeraPro-Regular.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+* {
+  font-family: 'Cera PRO';
+}
+
+:root {
+  --blue: #0D2E69;
+  --darkGrey: #898DA6;
+  --anotherGrey: #f6f6f8;
+  --aquamarine: rgb(38, 202, 172);
+  --gainsboro: rgba(137, 141, 166, 0.06);
+  --purple: #BB6BD9;
+  --dark: #000;
+  /* for sections background */
+}
+
+body {
+  scroll-behavior: smooth;
+  color: var(--darkGrey);
+}
+
+.icon {
+  display: inline-block;
+  mask-repeat: no-repeat;
+  mask-size: 100%;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100%;
+  -webkit-mask-position: center;
+  background-color: #2D3A45;
+  vertical-align: middle;
+}
+
+.icon-menu {
+  mask-image: url("assets/img/menu-line.svg");
+  -webkit-mask-image: url("assets/img/menu-line.svg");
+  background-color: #26CAAC;
+  width: 15px;
+  height: 15px;
+}
+
+.icon-userLine {
+  mask-image: url("assets/img/user-line.svg");
+  -webkit-mask-image: url("assets/img/user-line.svg");
+  background-color: #fff;
+  width: 18px;
+  height: 18px;
+}
+
+
+input,
+select,
+.btn,
+textarea {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+h1 {
+  line-height: 1.5;
+  font-size: 2.25rem;
+}
+
+h2 {
+  line-height: 1.2;
+}
+
+h1,
+h2 {
+  margin-bottom: 2.5px;
+  font-weight: 700;
+  color: var(--blue);
+}
+
+h3 {
+  margin-bottom: 2.5px;
+  font-weight: 700;
+  color: var(--blue);
+  font-size: 1.7rem;
+  line-height: 1.5;
+}
+
+.appSubTitle {
+  font-weight: 500;
+  line-height: 1.2;
+  font-size: 18px;
+}
+
+.appTitleDivVersion1 .appSubTitle {
+  width: 47%;
+  margin: 20px auto;
+}
+
+.appTitleDivVersion1 {
+  text-align: center;
+}
+
+.appTitleDivVersion2 {
+  width: 49%;
+}
+
+.appBtn,
+.appBtn:hover {
+  color: #FFFFFF;
+  background-color: #26CAAC;
+  border-color: #26CAAC;
+  display: inline-block;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 15px 24px;
+  font-size: 1.125rem;
+  line-height: 18px;
+  border-radius: 8px;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  text-decoration: none !important;
+}
+
+.appBtn2,
+.appBtn2:hover {
+  padding: 9px 24px;
+}
+
+.appBtnMenu,
+.appBtnMenu2 {
+  padding: 9px 9px;
+}
+
+.appBtn2,
+.appBtnMenu,
+.appBtnMenu2,
+.appBtn2:hover {
+  color: #FFFFFF;
+  background-color: #26CAAC;
+  border-color: #26CAAC;
+  display: inline-block;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid transparent;
+  font-size: 1.125rem;
+  line-height: 18px;
+  border-radius: 8px;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  text-decoration: none !important;
+}
+
+
+@media (min-width: 1500px) {}
+
+@media (max-width: 1500px) and (min-width: 1200px) {}
+
+@media (max-width: 1200px) and (min-width: 992px) {
+  .appTitleDivVersion1 .appSubTitle {
+    width: 90%;
+  }
+}
+
+@media (max-width: 992px) and (min-width: 765px) {
+  .appTitleDivVersion1 .appSubTitle {
+    width: 90%;
+  }
+}
+
+@media (max-width: 765px) and (min-width: 576px) {
+  .appTitleDivVersion1 .appSubTitle {
+    width: 90%;
+  }
+
+  .appBtn,
+  .appBtn2 {
+    padding: 15px 12px;
+  }
+}
+
+@media only screen and (max-width: 576px) and (min-width: 320px) {
+  .appTitleDivVersion1 .appSubTitle {
+    width: 90%;
+  }
+
+  h1 {
+    line-height: 1.4;
+    font-size: 1.5rem;
+  }
+
+  .appBtn,
+  .appBtn2 {
+    padding: 15px 12px;
+  }
+}

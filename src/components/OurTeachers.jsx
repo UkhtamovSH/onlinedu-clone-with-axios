@@ -13,7 +13,7 @@ const OurTeachers = () => {
 
   useEffect(() => {
     getTeachers();
-  })
+  }, [])
 
   const getTeachers = () => {
     axios.get('https://api.onlinedu.uz/api/v1/teachers?page=1&per_page=5')

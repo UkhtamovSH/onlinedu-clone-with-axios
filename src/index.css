@@ -27,6 +27,12 @@ body {
   color: var(--darkGrey);
 }
 
+.closeLineModalMain {
+  display: flex;
+  justify-content: end;
+  width: 100%;
+}
+
 .icon {
   display: inline-block;
   mask-repeat: no-repeat;

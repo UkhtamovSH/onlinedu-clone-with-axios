@@ -35,6 +35,8 @@
   object-fit: cover;
   margin: 0 auto;
   margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
 }
 
 .experts__carouselCardFlex {
@@ -71,4 +73,80 @@
 
 .experts__carouselCardFlexSub {
   width: 250px;
+}
+
+
+@media (min-width: 1500px) {}
+
+@media (max-width: 1500px) and (min-width: 1200px) {}
+
+@media (max-width: 1200px) and (min-width: 992px) {}
+
+@media (max-width: 992px) and (min-width: 765px) {
+  .experts__carouselCardFlex {
+    flex-direction: column;
+  }
+
+  .experts__carouselCardFlexSub {
+    width: 100%;
+  }
+
+  .experts__carousel {
+    width: 100%;
+  }
+
+  .experts__carouselText2,
+  .experts__carouselText1 {
+    font-size: 14px;
+  }
+
+  .experts__carouselCardFlex2 {
+    padding: 0;
+  }
+}
+
+@media (max-width: 765px) and (min-width: 576px) {
+  .experts__carouselCardFlex {
+    flex-direction: column;
+  }
+
+  .experts__carouselCardFlexSub {
+    width: 100%;
+  }
+
+  .experts__carousel {
+    width: 100%;
+  }
+
+  .experts__carouselText2,
+  .experts__carouselText1 {
+    font-size: 14px;
+  }
+
+  .experts__carouselCardFlex2 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width: 576px) and (min-width: 320px) {
+  .experts__carouselCardFlex {
+    flex-direction: column;
+  }
+
+  .experts__carouselCardFlexSub {
+    width: 100%;
+  }
+
+  .experts__carousel {
+    width: 100%;
+  }
+
+  .experts__carouselText2,
+  .experts__carouselText1 {
+    font-size: 14px;
+  }
+
+  .experts__carouselCardFlex2 {
+    padding: 0;
+  }
 }

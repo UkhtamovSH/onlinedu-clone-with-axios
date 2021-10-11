@@ -10,7 +10,7 @@ const Courses = () => {
 
   useEffect(() => {
     getCourses();
-  })
+  }, [])
 
   const getCourses = () => {
     axios.get('https://api.onlinedu.uz/api/v1/courses?per_page=6&category_type=paid&is_home=1')
@@ -30,7 +30,7 @@ const Courses = () => {
         </div>
         <Row>
           {courses.map((course, index) => (
-            <Col sm={12} md={6} lg={6} xl={4} className="courses__cardCol">
+            <Col sm={12} md={6} lg={6} xl={4} className="courses__cardCol" key={index}>
               <div className="courses__card">
                 <div className="courses__cardColImg">
                   <img src={"https://api.onlinedu.uz/storage/" + course.image} className="img-fluid courses__cardColImgSub" alt="edu" />

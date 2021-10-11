@@ -162,6 +162,37 @@
   transform: translate(0, 0);
 }
 
+.navbarForm .form-group {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.closeLineModal {
+  cursor: pointer;
+}
+
+.modalBtnLink:hover,
+.modalBtnLink {
+  color: rgb(38, 202, 172);
+  cursor: pointer;
+  padding: 0;
+  background: none !important;
+  border: none;
+  outline: none;
+  display: block;
+  margin: 10px 0;
+  font-weight: 500;
+}
+
+.loginTitle {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--blue);
+  text-align: center;
+}
+
+
+
 @media (min-width: 1500px) {}
 
 @media (max-width: 1500px) and (min-width: 1200px) {}

@@ -3,7 +3,7 @@ import './Certificate.css'
 
 const Certificate = () => {
   return (
-    <div>
+    <>
       <div className="certificate">
         <Container className="certificateSub">
           <div className="appTitleDivVersion1">
@@ -32,7 +32,7 @@ const Certificate = () => {
           </div>
         </Container>
       </div>
-    </div>
+    </>
   )
 }
 

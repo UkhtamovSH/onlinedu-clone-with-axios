@@ -1,10 +1,11 @@
-import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Container } from "reactstrap"
 import './PracticeCarousel.css'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { API_URL } from '../../helpers/api.jsx'
+import { getNotAuthInstance } from '../../helpers/httpClient';
 
 const PracticeCarousel = () => {
   const [userCount, setUserCount] = useState([])
@@ -14,7 +15,8 @@ const PracticeCarousel = () => {
   }, [])
 
   const getUserCount = () => {
-    axios.get('https://api.onlinedu.uz/api/v1/admin/user_count')
+    getNotAuthInstance()
+      .get('/api/v1/admin/user_count')
       .then(res => {
         setUserCount(res.data.data)
       })
@@ -72,28 +74,76 @@ const PracticeCarousel = () => {
 
         <Slider {...settings} className="practice__carousel">
           <div className="practice__carouselCard">
-            <img src="https://onlinedu.uz/images/p1.png"
-              className="practice__carouselImg img-fluid" alt="" />
+            <img src={`${API_URL}/manager/images/p1.png`}
+              className="practice__carouselImg img-fluid"
+              alt=""
+              onError={
+                e => {
+                  e.target.onerror = null;
+                  e.target.src = '/course.jpeg'
+                }
+              }
+            />
           </div>
           <div className="practice__carouselCard">
-            <img src="https://onlinedu.uz/images/p2.png"
-              className="practice__carouselImg img-fluid" alt="" />
+            <img src={`${API_URL}/images/p2.png`}
+              className="practice__carouselImg img-fluid"
+              alt=""
+              onError={
+                e => {
+                  e.target.onerror = null;
+                  e.target.src = '/course.jpeg'
+                }
+              }
+            />
           </div>
           <div className="practice__carouselCard">
-            <img src="https://onlinedu.uz/images/p3.png"
-              className="practice__carouselImg img-fluid" alt="" />
+            <img src={`${API_URL}/images/p3.png`}
+              className="practice__carouselImg img-fluid"
+              alt=""
+              onError={
+                e => {
+                  e.target.onerror = null;
+                  e.target.src = '/course.jpeg'
+                }
+              }
+            />
           </div>
           <div className="practice__carouselCard">
-            <img src="https://onlinedu.uz/images/p4.png"
-              className="practice__carouselImg img-fluid" alt="" />
+            <img src={`${API_URL}/images/p4.png`}
+              className="practice__carouselImg img-fluid"
+              alt=""
+              onError={
+                e => {
+                  e.target.onerror = null;
+                  e.target.src = '/course.jpeg'
+                }
+              }
+            />
           </div>
           <div className="practice__carouselCard">
-            <img src="https://onlinedu.uz/images/p5.png"
-              className="practice__carouselImg img-fluid" alt="" />
+            <img src={`${API_URL}/images/p5.png`}
+              className="practice__carouselImg img-fluid"
+              alt=""
+              onError={
+                e => {
+                  e.target.onerror = null;
+                  e.target.src = '/course.jpeg'
+                }
+              }
+            />
           </div>
           <div className="practice__carouselCard">
-            <img src="https://onlinedu.uz/images/p6.png"
-              className="practice__carouselImg img-fluid" alt="" />
+            <img src={`${API_URL}/images/p6.png`}
+              className="practice__carouselImg img-fluid"
+              alt=""
+              onError={
+                e => {
+                  e.target.onerror = null;
+                  e.target.src = '/course.jpeg'
+                }
+              }
+            />
           </div>
         </Slider>
       </Container>

@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { Col, Container, Row } from "reactstrap"
-import axios from "axios"
 import './Footer.css'
+import { API_URL } from '../../helpers/api.jsx'
+import { getInstance } from "../../helpers/httpClient"
+
 
 const Footer = () => {
   const [categories, setCategories] = useState([])
@@ -12,7 +14,8 @@ const Footer = () => {
   }, [])
 
   const getCategories = () => {
-    axios.get('https://api.onlinedu.uz/api/v1/paid/categories')
+    getInstance()
+      .get(`${API_URL}/api/v1/paid/categories`)
       .then(res => {
         setCategories(res.data.data)
       })
@@ -24,15 +27,17 @@ const Footer = () => {
       <Container>
         <Row>
           <Col sm={12} md={12} lg={3} xl={3} className="footer__column">
-            <img src="https://onlinedu.uz/images/assets/logo.png"
-              className="footer__logo" alt="" />
+            <Link to="/" className="text-decoration-none">
+              <img src="https://onlinedu.uz/images/assets/logo.png"
+                className="footer__logo" alt="" />
+            </Link>
           </Col>
           <Col sm={12} md={4} lg={3} xl={3} className="footer__column">
             <p className="footer__columnTitle">Kurslar</p>
             <ul>
               {categories.map((category, index) => (
                 <li key={index}>
-                  <Link to={"https://onlinedu.uz/courses/1?category=" + category.id}>
+                  <Link to={`/courses/1?category=` + category.id}>
                     {category.name}
                   </Link>
                 </li>

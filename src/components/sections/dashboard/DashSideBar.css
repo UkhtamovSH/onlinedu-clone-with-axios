@@ -1,0 +1,28 @@
+.dashSideBarLinks a {
+  display: block;
+  text-decoration: none;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  transition: .2s ease;
+  color: var(--darkGrey);
+}
+
+.dashSideBarLinks a:hover {
+  color: var(--aquamarine);
+}
+
+.fontAwesomeDiv {
+  width: 30px;
+  display: inline-block;
+}
+
+.navLinkDivSideBar {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.navLinkDivSideBar:hover {
+  color: var(--aquamarine);
+}

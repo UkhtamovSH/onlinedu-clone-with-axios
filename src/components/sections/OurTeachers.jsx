@@ -3,10 +3,10 @@ import './OurTeachers.css';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import axios from "axios";
 import { Container } from "reactstrap";
 import { Link } from "react-router-dom";
-
+import { IMG_URL } from "../../helpers/api.jsx"
+import { getNotAuthInstance } from "../../helpers/httpClient";
 const OurTeachers = () => {
 
   const [teachers, setTeachers] = useState([])
@@ -16,7 +16,8 @@ const OurTeachers = () => {
   }, [])
 
   const getTeachers = () => {
-    axios.get('https://api.onlinedu.uz/api/v1/teachers?page=1&per_page=5')
+    getNotAuthInstance()
+      .get(`/api/v1/teachers?page=1&per_page=5`)
       .then(res => {
         setTeachers(res.data.data)
       })
@@ -73,9 +74,14 @@ const OurTeachers = () => {
             <div className="ourTeachers__carouselCard" key={index}>
               <div className="ourTeachers__carouselFlex">
                 <div className="ourTeachers__divImg">
-                  <img src={"https://api.onlinedu.uz/storage/" + teacher.image}
+                  <img src={IMG_URL + teacher.image}
                     className="ourTeachers__img"
-                    alt="" />
+                    alt={IMG_URL + teacher.name}
+                    onError={e => {
+                      e.target.onerror = null;
+                      e.target.src = '/user.png';
+                    }}
+                  />
                 </div>
                 <div className="">
                   <p className="ourTeachers__carouselName">{teacher.name}</p>

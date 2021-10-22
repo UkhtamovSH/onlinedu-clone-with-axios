@@ -1,24 +1,28 @@
 import React, { useState } from "react"
 import './Login.jsx'
 import { Form, FormGroup, Input, Label } from 'reactstrap'
-import axios from "axios"
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
+import { getInstance } from '../../helpers/httpClient'
+import { setToken } from '../../helpers/tokenStorage'
+import { useHistory } from 'react-router-dom'
 
-
-
-const Login = () => {
+const Login = (props) => {
 
   const [lists, setLists] = useState([])
   const [number, setNumber] = useState('')
   const [password, setPassword] = useState('')
   const [err_Password, setErr_Password] = useState(false);
+  const [local, setLocal] = useState(true);
+  const [loading, setLoading] = useState(false);
+
+  let history = useHistory()
 
   const postLogin = (e) => {
     e.preventDefault();
-
+    setLoading(true);
     const loginData = {
-      number: number,
+      name: number,
       password: password
     }
 
@@ -27,31 +31,27 @@ const Login = () => {
       v_password = true;
     }
     if (!v_password) {
-      axios.post('https://api.kasbiytalim.uz/api/v1/login', loginData)
+
+      getInstance().post('/api/v1/login', loginData)
         .then(res => {
+          setToken(res.data.access_token, local);
           setLists([...lists], res.loginData)
           setNumber("")
           setPassword("")
+          setLoading(false);
+          history.push('dashboard/profile')
         })
-        .catch(error => { })
+
+        .catch(error => { setLoading(false); })
     } else {
       setErr_Password(v_password);
+      setLoading(false);
     }
   }
 
 
   return (
     <Form onSubmit={(e) => postLogin(e)} className="navbarForm">
-      {/* <FormGroup>
-        <Label for="exampleNumber">Telefon raqam</Label>
-        <Input
-          type="number"
-          name="number"
-          id="exampleNumber"
-          onChange={(e) => setNumber(e.target.value)}
-          value={number}
-        />
-      </FormGroup> */}
       <PhoneInput
         onChange={(e) => setNumber(e)}
         value={number}
@@ -89,14 +89,14 @@ const Login = () => {
 
       <FormGroup check className="py-2">
         <Label check>
-          <Input type="checkbox" />{' '}
+          <Input type="checkbox" checked={local} onChange={(e) => { setLocal(e.target.checked) }} />{' '}
           Eslab qolish
         </Label>
       </FormGroup>
-
-      <div className="text-center my-3">
-        <button type="submit" className="appBtn">Kirish</button>
-      </div>
+      {loading ? <b>Loading...</b>
+        : <div className="text-center my-3">
+          <button type="submit" className="appBtn">Kirish</button>
+        </div>}
     </Form >
   )
 }

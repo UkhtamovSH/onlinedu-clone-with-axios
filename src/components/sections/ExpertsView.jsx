@@ -4,7 +4,8 @@ import './ExpertsView.css'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import axios from 'axios';
+import { IMG_URL } from '../../helpers/api.jsx'
+import { getNotAuthInstance } from '../../helpers/httpClient';
 
 const ExpertsView = () => {
   const [experts, setExpert] = useState([])
@@ -13,7 +14,8 @@ const ExpertsView = () => {
   }, [])
 
   const getExperts = () => {
-    axios.get('https://api.onlinedu.uz/api/v1/reviews')
+    getNotAuthInstance()
+      .get(`/api/v1/reviews`)
       .then(res => {
         setExpert(res.data)
       })
@@ -50,8 +52,15 @@ const ExpertsView = () => {
                 <div className="experts__carouselCardFlex">
                   <div className="">
                     <div className="experts__carouselCardFlexSub">
-                      <img src={"https://api.onlinedu.uz/storage/" + expert.image}
-                        className="experts__carouselImg img-fluid" alt="" />
+                      <img
+                        src={IMG_URL + expert.image}
+                        className="experts__carouselImg img-fluid"
+                        alt=""
+                        onError={e => {
+                          e.target.onError = null;
+                          e.target.src = '/user.png'
+                        }}
+                      />
                       <p className="experts__carouselText1">{expert.name}</p>
                       <p className="experts__carouselText1">{expert.position}</p>
                     </div>

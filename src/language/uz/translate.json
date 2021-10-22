@@ -1,0 +1,13 @@
+{
+  "translations": {
+    "navbar": {
+      "ru": "Ruscha",
+      "uz": "O`zbekcha"
+    },
+    "header": {
+      "title": "«Uzluksiz kasbiy ta’lim» elektron platformasi",
+      "subTitle": "Malaka oshirish uchun kurslar endi onlayn. Qulayliklardan foydalaning va vaqtingizni tejang.",
+      "btn": "Malaka oshirishni boshlash"
+    }
+  }
+}

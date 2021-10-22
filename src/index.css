@@ -14,6 +14,7 @@
 :root {
   --blue: #0D2E69;
   --darkGrey: #898DA6;
+  --darkGrey2: #F5F5F5;
   --anotherGrey: #f6f6f8;
   --aquamarine: rgb(38, 202, 172);
   --gainsboro: rgba(137, 141, 166, 0.06);
@@ -164,6 +165,29 @@ h3 {
   text-decoration: none !important;
 }
 
+.dashAppTitle {
+  margin: 0;
+  line-height: 1.2;
+  font-weight: 600;
+  color: #0D2E69;
+}
+
+.dashProfile__cardBtn {
+  background-color: #eceff3;
+  border-color: #eceff3;
+  padding: 9px 24px;
+  font-size: 1rem;
+  line-height: 18px;
+  border-radius: 8px;
+  border: none;
+  transition: .2s ease;
+  color: var(--blue);
+}
+
+.dashProfile__cardBtn:hover {
+  background-color: #d5dbe4;
+  border-color: #cdd5df;
+}
 
 @media (min-width: 1500px) {}
 

@@ -1,0 +1,169 @@
+.dashLayout {
+  background-color: var(--anotherGrey);
+  overflow: hidden;
+}
+
+.dashLayout__dashSideBar {
+  position: relative;
+  background-color: #fff;
+  min-height: 450px;
+  padding-right: 35px;
+}
+
+.dashLayout__dashSideBar:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  min-height: 450px;
+  left: -4000px;
+  background-color: #fff;
+}
+
+.dashLayout__dashSideBarSub {
+  position: relative;
+}
+
+.dashLayout__menuIcon {
+  display: none;
+}
+
+.dashLayout__menuDivBack {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+
+.dashLayout__menuDiv {
+  display: none;
+  position: fixed;
+  top: 72px;
+  left: 0;
+  bottom: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #fff;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-bottom: 100px;
+  transition: 0.5s ease;
+}
+
+.dashLayout__menuDivSub {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.dashLayout__menuDivShow {
+  left: 0;
+  bottom: 0;
+  width: 250px;
+}
+
+.dashLayout__menuDivHide {
+  left: -250px;
+  bottom: 0;
+  width: 250px;
+}
+
+.dashLayout__dashSideBarMain {
+  height: 100%;
+}
+
+.dashLayout__menuIconBtn {
+  color: #FFFFFF;
+  background-color: #898DA6;
+  border-color: #898DA6;
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
+  padding: 0;
+  margin: 0 15px auto 0;
+  font-size: 20px;
+  border: none;
+  border-radius: 8px;
+}
+
+@media (min-width: 1500px) {}
+
+@media (max-width: 1500px) and (min-width: 1200px) {}
+
+@media (max-width: 1200px) and (min-width: 992px) {}
+
+@media (max-width: 992px) and (min-width: 765px) {
+  .dashLayout__dashSideBarMain {
+    display: none;
+  }
+
+  .dashLayout__menuIcon {
+    display: block;
+  }
+
+  .dashLayout__menuDivBackShow {
+    display: block;
+    background-color: var(--dark);
+    opacity: .4;
+  }
+
+  .dashLayout__menuDivBackHide {
+    display: none;
+  }
+
+  .dashLayout__menuDiv {
+    display: block;
+  }
+}
+
+@media (max-width: 765px) and (min-width: 576px) {
+  .dashLayout__dashSideBarMain {
+    display: none;
+  }
+
+  .dashLayout__menuIcon {
+    display: block;
+  }
+
+  .dashLayout__menuDivBackShow {
+    display: block;
+    background-color: var(--dark);
+    opacity: .4;
+  }
+
+  .dashLayout__menuDivBackHide {
+    display: none;
+  }
+
+  .dashLayout__menuDiv {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 576px) and (min-width: 320px) {
+  .dashLayout__dashSideBarMain {
+    display: none;
+  }
+
+  .dashLayout__menuIcon {
+    display: block;
+  }
+
+  .dashLayout__menuDivBackShow {
+    display: block;
+    background-color: var(--dark);
+    opacity: .4;
+  }
+
+  .dashLayout__menuDivBackHide {
+    display: none;
+  }
+
+  .dashLayout__menuDiv {
+    display: block;
+  }
+}

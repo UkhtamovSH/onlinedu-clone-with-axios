@@ -1,7 +1,10 @@
 import { Col, Container, Row } from "reactstrap"
 import './Header.css'
+import { useTranslation } from 'react-i18next'
 
 const Header = () => {
+
+  const { t } = useTranslation();
   return (
     <div>
       <Container>
@@ -11,15 +14,15 @@ const Header = () => {
               <div className="">
                 <div className="">
                   <h1>
-                    «Uzluksiz kasbiy ta’lim» <br />elektron platformasi
+                    {t('header.title')}
                   </h1>
                 </div>
                 <div className="appSubTitleMain">
                   <p className="appSubTitle">
-                    Malaka oshirish uchun kurslar endi onlayn.
-                    Qulayliklardan foydalaning va vaqtingizni tejang.</p>
+                    {t('header.subTitle')}
+                  </p>
                   <button className="appBtn mt-3">
-                    Malaka oshirishni boshlash
+                    {t('header.btn')}
                   </button>
                 </div>
               </div>

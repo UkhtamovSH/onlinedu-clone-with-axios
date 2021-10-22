@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import { Container } from "reactstrap"
 import './Vebinar.css'
+import { API_URL } from '../../helpers/api.jsx'
 
 const Vebinar = () => {
   return (
@@ -21,13 +22,28 @@ const Vebinar = () => {
             <div className="">
               <ul>
                 <li>
-                  <img src="https://onlinedu.uz/images/teachers/4.jpg" alt="edu" />
+                  <img src={`${API_URL}/images/teachers/4.jpg`} alt="edu"
+                    onError={e => {
+                      e.target.onError = null;
+                      e.target.src = '/user.png'
+                    }}
+                  />
                 </li>
                 <li>
-                  <img src="https://onlinedu.uz/images/teachers/1.jpg" alt="edu" />
+                  <img src={`${API_URL}/images/teachers/1.jpg`} alt="edu"
+                    onError={e => {
+                      e.target.onError = null;
+                      e.target.src = '/user.png'
+                    }}
+                  />
                 </li>
                 <li>
-                  <img src="https://onlinedu.uz/images/teachers/2.jpg" alt="edu" />
+                  <img src={`${API_URL}/images/teachers/2.jpg`} alt="edu"
+                    onError={e => {
+                      e.target.onError = null;
+                      e.target.src = '/user.png'
+                    }}
+                  />
                 </li>
                 <li>
                   <span>+120</span>

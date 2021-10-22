@@ -1,13 +1,17 @@
-import axios from 'axios'
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { Container, Form, FormGroup, Input, Label, Modal, ModalBody } from 'reactstrap'
-import Login from './loginRegister/Login'
-import Register from './loginRegister/Register'
-import ResetLogin from './loginRegister/ResetLogin'
+import { Container, Modal, ModalBody, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap'
+import Login from '../loginRegister/Login.jsx'
+import Register from '../loginRegister/Register.jsx'
+import ResetLogin from '../loginRegister/ResetLogin.jsx'
 import './Navbar.css'
+import { getNotAuthInstance } from '../../helpers/httpClient.jsx'
+import { getLanguage } from '../../helpers/language.jsx'
+import { useTranslation } from 'react-i18next'
+import { issetToken } from '../../helpers/tokenStorage.jsx'
 
-const Navbar = () => {
+
+const Navbar = (props) => {
   const [isOpen, setIsOpen] = useState(false)
   const [isOpenLen, setIsOpenLen] = useState(false)
   const [modal, setModal] = useState(false)
@@ -19,7 +23,8 @@ const Navbar = () => {
   }, [])
 
   const getCategories = () => {
-    axios.get('https://api.onlinedu.uz/api/v1/paid/categories')
+    getNotAuthInstance()
+      .get('/api/v1/paid/categories')
       .then(res => {
         setCategories(res.data.data)
       })
@@ -31,13 +36,23 @@ const Navbar = () => {
   const toggleModal = () => setModal(!modal)
   const toRegisterBtnToggle = (i) => setToRegisterBtn(i)
 
+  const { t, i18n } = useTranslation();
+  const lan = getLanguage();
+
+  const onLanguageHandle = newLang => {
+    i18n.changeLanguage(newLang);
+    window.localStorage.setItem('language', newLang);
+  };
+
   return (
     <div className="navbar sticky-top">
       <Container>
         <div className="navbar__flexRightSub1Main">
           <div className="navbar__flexRightSub1">
-            <img src="https://onlinedu.uz/images/assets/logo.png"
-              className="footer__logo" alt="" />
+            <Link to="/" className="text-decoration-none">
+              <img src="https://onlinedu.uz/images/assets/logo.png"
+                className="footer__logo" alt="" />
+            </Link>
           </div>
           <div className="navbar__flexRightSub2">
             <button className="menuMainBtn" onClick={toggleIsOpen}>
@@ -49,7 +64,7 @@ const Navbar = () => {
                 <ul>
                   {categories.map((category, index) => (
                     <li key={index}>
-                      <Link to={"https://onlinedu.uz/courses/1?category=" + category.id}>
+                      <Link to={`/courses/1?category=` + category.id}>
                         {category.name}
                       </Link>
                     </li>
@@ -65,34 +80,42 @@ const Navbar = () => {
             </div>
             <div className="d-inline-block">
               <button className="appBtn3">
-                <img src="search-line.svg" alt="" />
+                <img src="/search-line.svg" alt="" />
               </button>
             </div>
           </div>
           <div className="navbar__flexRightSub4">
-            <button className="menuMainBtn" onClick={toggleIsOpenLen}>
-              O`zbekcha
-            </button>
-            <div className={`menuMain ${isOpenLen ? " show" : "hide"}`}>
-              <div className="menuMainSub">
-                <ul>
-                  <li>
-                    <Link to=""> O`zbekcha </Link>
-                  </li>
-                  <li>
-                    <Link to=""> Русский </Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
+            <Dropdown isOpen={isOpenLen} toggle={toggleIsOpenLen}>
+              <DropdownToggle className="" caret>
+                {lan === "uz" ?
+                  t('navbar.uz')
+                  :
+                  t('navbar.ru')
+                }
+              </DropdownToggle>
+              <DropdownMenu className="">
+                <DropdownItem onClick={() => onLanguageHandle('uz')}>
+                  {t('navbar.uz')}
+                </DropdownItem>
+                <DropdownItem onClick={() => onLanguageHandle('ru')}>
+                  {t('navbar.ru')}
+                </DropdownItem>
+              </DropdownMenu>
+            </Dropdown>
           </div>
+
           <div className="navbar__flexRightSub5">
-            <button
-              className="appBtnMenu2 appBtn222 d-inline-block"
-              onClick={toggleModal}>
-              <span className="icon icon-userLine" />
-              <p className="d-inline-block mb-0">Kirish</p>
-            </button>
+            {!issetToken() ?
+              <button className="appBtnMenu2 appBtn222 d-inline-block" onClick={toggleModal}>
+                <span className="icon icon-userLine" />
+                <p className="d-inline-block mb-0">Kirish</p>
+              </button>
+              :
+              <Link to="/dashboard/profile" className="appBtnMenu2 appBtn222 d-inline-block text-white">
+                <span className="icon icon-userLine" />
+                <p className="d-inline-block mb-0">Accaunt</p>
+              </Link>
+            }
             <Modal isOpen={modal} toggle={toggleModal}
               className="">
               <ModalBody>

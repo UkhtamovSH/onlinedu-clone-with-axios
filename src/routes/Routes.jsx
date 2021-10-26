@@ -3,7 +3,7 @@ import HomePage from '../components/pages/client/HomePage.jsx'
 import Dashboard from '../components/pages/dashboard/DashLayout.jsx'
 import DashProfile from '../components/pages/dashboard/DashProfile.jsx'
 import DashStatistic from '../components/pages/dashboard/DashStatistic.jsx'
-import LodashArray from '../lodash learn/LodashArray.jsx'
+import TinymceReact from '../components/test necessary plagins/tinymceReact/TinymceReact.jsx'
 
 const Routes = () => {
   return (
@@ -12,7 +12,7 @@ const Routes = () => {
       <Route exact path="/dashboard/profile" component={DashProfile} />
       <Route exact path="/dashboard/statistics" component={DashStatistic} />
       <Route exact path="/dashboard" component={Dashboard} />
-      <Route exact path="/lodash" component={LodashArray} />
+      <Route exact path="/tiny" component={TinymceReact} />
     </Switch>
   )
 }

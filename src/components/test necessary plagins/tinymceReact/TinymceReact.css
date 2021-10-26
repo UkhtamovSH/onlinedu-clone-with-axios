@@ -1,0 +1,24 @@
+div[title='viris-math'] button span {
+  background-image: url(https://onlinedu.uz/images/jodit-text/formula.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+div[title='viris-chem'] button span {
+  background-image: url(https://onlinedu.uz/images/jodit-text/chem.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+div[title='viris-math'] button span svg,
+div[title='viris-chem'] button span svg {
+  display: none !important;
+}
+
+.wrs_editor .wrs_panelContainer {
+  min-height: 107px;
+}

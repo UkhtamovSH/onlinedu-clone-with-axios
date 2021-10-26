@@ -3,20 +3,20 @@ import _ from "lodash"
 
 const LodashArray = () => {
   /* ===================Lodash===================== */
-  const listArr = ['a', 'c', false, 0, 'k', '', NaN]
-  const listArr2 = [
-    {
-      'char1': 'A',
-      'char2': 'c',
-    },
-    {
-      'char3': 'd',
-      'char4': 'g',
-    },
-  ]
-  const listArr3 = [2, 5, 3, [77, '56', [6, [false, [null]]]], 34]
+  // const listArr = ['a', 'c', false, 0, 'k', '', NaN]
+  // const listArr2 = [
+  //   {
+  //     'char1': 'A',
+  //     'char2': 'c',
+  //   },
+  //   {
+  //     'char3': 'd',
+  //     'char4': 'g',
+  //   },
+  // ]
+  // const listArr3 = [2, 5, 3, [77, '56', [6, [false, [null]]]], 34]
 
-  const listArr4 = [['f', 57], ['9', 'dd'], ['a', 1], [55, '45']]
+  // const listArr4 = [['f', 57], ['9', 'dd'], ['a', 1], [55, '45']]
 
   /* ----“Array” Methods-----*/
   /*
@@ -160,10 +160,10 @@ const LodashArray = () => {
 
   /*
   // 26. _.pullAllWith() - method
+
+  */
   const pullAllWithList = _.pullAllWith(
     [{ 'x': 2 }, { 'x': 6 }], [{ 'x': 2 }], _.isEqual)
-  */
-
   /*
   
   */
@@ -181,7 +181,7 @@ const LodashArray = () => {
 
   return (
     <div>
-      {/* {console.log(pullAllWithList)} */}
+      {console.log(pullAllWithList)}
     </div>
   )
 }

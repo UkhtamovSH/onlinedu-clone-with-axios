@@ -1,0 +1,16 @@
+.reactCompoundTimer h1 {
+  font-weight: normal;
+  letter-spacing: .125rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.reactCompoundTimer .timer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.timerSub {
+  text-align: center;
+}

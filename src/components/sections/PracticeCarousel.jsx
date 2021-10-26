@@ -37,7 +37,6 @@ const PracticeCarousel = () => {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-          infinite: true
         }
       },
       {

@@ -39,11 +39,11 @@ const DashSideBar = () => {
           </div>
           <span>Mening profilim</span>
         </NavLink>
-        <NavLink to="/dashboard/pupils" activeStyle={{ color: '#26CAAC' }}>
+        <NavLink to="/dashboard/course/view" activeStyle={{ color: '#26CAAC' }}>
           <div className="fontAwesomeDiv">
             <FontAwesomeIcon icon={faGraduationCap} />
           </div>
-          <span>Tinglovchilar</span>
+          <span>Mening kurslarim</span>
         </NavLink>
         <NavLink to="/dashboard/teachers" activeStyle={{ color: '#26CAAC' }}>
           <div className="fontAwesomeDiv">

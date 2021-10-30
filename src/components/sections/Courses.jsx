@@ -64,7 +64,7 @@ const Courses = () => {
                       </div>
                     </div>
                     <div className="">
-                      <Link to="" className="appBtn2">Tanlash</Link>
+                      <Link to={`/dashboard/course/view/${course.slug}`} className="appBtn2">Tanlash</Link>
                     </div>
                   </div>
                 </div>

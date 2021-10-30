@@ -40,9 +40,17 @@ const DashLayout = (props) => {
             </Col>
           </Row>
         </Container>
-        <div className={`dashLayout__menuDivBack 
-        ${menuOpen ? "dashLayout__menuDivBackShow" : "dashLayout__menuDivBackHide"} `}
-          onClick={toggleMenu} />
+        <div
+          className={`dashLayout__menuDivBack 
+        ${menuOpen
+              ?
+              "dashLayout__menuDivBackShow"
+              :
+              "dashLayout__menuDivBackHide"
+            } 
+        `}
+          onClick={toggleMenu}
+        />
         <div className={`dashLayout__menuDiv 
         ${menuOpen ? "dashLayout__menuDivShow" : "dashLayout__menuDivHide"} `}>
           <div className="dashLayout__menuDivSub pt-3">
@@ -50,11 +58,6 @@ const DashLayout = (props) => {
           </div>
         </div>
       </div>
-      <style jsx={true}>{`
-      .asdsa: {
-        color: 'red
-      }
-      `}</style>
     </Layout>
   )
 }

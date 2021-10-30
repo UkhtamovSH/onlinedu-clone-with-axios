@@ -11,6 +11,10 @@
   font-family: 'Cera PRO';
 }
 
+p {
+  margin-bottom: 0;
+}
+
 :root {
   --blue: #0D2E69;
   --darkGrey: #898DA6;

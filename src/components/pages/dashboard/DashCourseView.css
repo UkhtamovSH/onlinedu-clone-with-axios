@@ -1,0 +1,16 @@
+.courseView__Card {
+  overflow: hidden;
+  background-color: #FFF;
+  box-shadow: 0 8px 16px rgb(13 46 105 / 5%);
+  margin-bottom: 30px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+  border: none;
+}
+
+.courseView__CardInfo {
+  padding: 16px;
+}
